@@ -26,7 +26,7 @@ class Student {
         return per;
     }
 
-
+  
     void displayGrade(){
         int percentage=calculatepercentage();
         if(percentage>=90){
@@ -52,7 +52,7 @@ class Student {
 }
 
 class StudentResult {
-    public static void main(String[] args) {
+    public static void main(String args []) {
         Student student1 = new Student("John", 85, 90, 78, 92, 88);
         System.out.println("Total Marks: " + student1.calculateTotalMarks());
         System.out.println("Percentage: " + student1.calculatepercentage() + "%");
