@@ -24,7 +24,7 @@ import java.util.Scanner;
     }
    
    
-}
+}//jii;kjfkjl; gldjkj;ldjglk;djkgj;ld jgdl;jgljdgglkjl;gjlsj
 public class Bustickenbokkingsystem{
    public static void main(String []arg){
     Scanner sc=new Scanner(System.in);
