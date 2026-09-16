@@ -3,13 +3,13 @@ import java.util.*;
 class TicketBooking{
     private  int availableSeat=5;
     int seatno;
-    String customer;
+    String buyer;
 
     synchronized void bookseat(String name,int seatno){
-        customer=name;
+        buyer=name;
        this.seatno=seatno;
 
-       System.out.println(customer +" is booking "+seatno+"seat");
+       System.out.println(buyer +" is booking "+seatno+"seat");
        if(availableSeat>=seatno){
         try {
             Thread.sleep(1000);
@@ -29,13 +29,13 @@ class TicketBooking{
    
 }
 
-class customer extends Thread{
+class buyer extends Thread{
 
     TicketBooking ticket;
     String name;
     int numberofseat;
 
-    customer(TicketBooking ticket,String name,int numberofseat){
+    buyer(TicketBooking ticket,String name,int numberofseat){
         this.ticket=ticket;
         this.name=name;
         this.numberofseat=numberofseat;
@@ -49,12 +49,15 @@ class customer extends Thread{
 }
 
 public class problem2 {
-    public static void mani(String []args){
+    public static void main(String []args){
         // Scanner sc=new Scanner(System.in);
         TicketBooking ticket=new TicketBooking();
-        customer c1=new customer(ticket, "Ankit", 3);
-        customer c2=new customer(ticket, "Rohit", 2);
-        customer c3=new customer(ticket, "akhilesh", 2);
+        buyer c1=new buyer(ticket, "Ankit", 3);
+        buyer c2=new buyer(ticket, "Rohit", 2);
+        buyer c3=new buyer(ticket, "akhilesh", 2);
+        c1.start();
+        c2.start();
+        c3.start();
         
     }
 }
